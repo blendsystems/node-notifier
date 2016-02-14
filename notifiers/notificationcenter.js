@@ -7,6 +7,10 @@ var path = require('path'),
     Growl = require('./growl'),
     cloneDeep = require('lodash.clonedeep');
 
+if (GLOBAL.terminalNotifier){
+	notifier = GLOBAL.terminalNotifier;
+}
+
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 
