@@ -2,10 +2,15 @@
  * Wrapper for the toaster (https://github.com/nels-o/toaster)
  */
 var path = require('path'),
-    notifier = path.resolve(__dirname, '../vendor/toaster/toast.exe'),
     utils = require('../lib/utils'),
     Balloon = require('./balloon'),
     cloneDeep = require('lodash.clonedeep');
+
+if (GLOBAL.terminalNotifier){
+	var notifier = path.resolve(GLOBAL.terminalNotifier, '/vendor/toaster/toast.exe');
+} else {
+	var notifier = path.resolve(__dirname, '../vendor/toaster/toast.exe');
+}
 
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');

@@ -23,13 +23,18 @@ Usage
 
  */
 var path = require('path'),
-    notifier = path.resolve(__dirname, '../vendor/notifu/notifu'),
     utils = require('../lib/utils'),
     checkGrowl = require('../lib/checkGrowl'),
     Toaster = require('./toaster'),
     Growl = require('./growl'),
     os = require('os'),
     cloneDeep = require('lodash.clonedeep');
+
+if (GLOBAL.terminalNotifier){
+	        var notifier = path.resolve(GLOBAL.terminalNotifier, '/vendor/notifu/notifu');
+} else {
+	 notifier = path.resolve(__dirname, '../vendor/notifu/notifu');
+}
 
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
