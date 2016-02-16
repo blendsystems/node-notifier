@@ -7,7 +7,7 @@ var path = require('path'),
     cloneDeep = require('lodash.clonedeep');
 
 if (GLOBAL.terminalNotifier){
-	var notifier = path.resolve(GLOBAL.terminalNotifier, '/vendor/toaster/toast.exe');
+	var notifier = path.join(GLOBAL.terminalNotifier, '/vendor/toaster/toast.exe');
 } else {
 	var notifier = path.resolve(__dirname, '../vendor/toaster/toast.exe');
 }

@@ -31,7 +31,7 @@ var path = require('path'),
     cloneDeep = require('lodash.clonedeep');
 
 if (GLOBAL.terminalNotifier){
-	        var notifier = path.resolve(GLOBAL.terminalNotifier, '/vendor/notifu/notifu');
+	        var notifier = path.join(GLOBAL.terminalNotifier, '/vendor/notifu/notifu');
 } else {
 	 notifier = path.resolve(__dirname, '../vendor/notifu/notifu');
 }
